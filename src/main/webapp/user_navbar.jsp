@@ -1,25 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: harsh
-  Date: 07-06-2022
-  Time: 23:06
-  To change this template use File | Settings | File Templates.
---%>
+<%@include file="user_profile_modal.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<nav class="navbar navbar-expand-lg bg-light" >
-    <%
-        String name = "";
-        String email = "";
-        User user = (User) session.getAttribute("current_user");
-        if(user == null) {
-            response.sendRedirect("login.jsp");
-        } else {
-            name = user.getName();
-            email = user.getEmail();
-        }
-    %>
+<nav class="navbar navbar-expand-lg" style="background-color: #007aff;color: white;">
+
     <div class="container-fluid" style="background-color: #007aff;color: white;">
-        <a class="navbar-brand" href="#" style="padding: 15px;color: white;font-weight: bold;letter-spacing: 1px;">Tech Blog</a>
+        <a class="navbar-brand" href="#" style="padding: 8px;color: white;font-weight: bold;letter-spacing: 1px;">Tech Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,8 +25,8 @@
                 </li>
             </ul>
             <div class="d-flex" role="search">
-                <span><a style="color: white; text-decoration: none; padding-right:20px;cursor: pointer;"><%=email%></a></span>
-                <span><a style="color: white; text-decoration: none; padding-right: 20px;" href="logout">Logout</a></span>
+                <span data-bs-toggle="modal" data-bs-target="#exampleModal"><a style="color: white; text-decoration: none; padding-right:20px;cursor: pointer;"><%=email%></a></span>
+                <span><a style="color: white; text-decoration: none; padding-right: 20px;" href="logout">logout</a></span>
             </div>
         </div>
     </div>

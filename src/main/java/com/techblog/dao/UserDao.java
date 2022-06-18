@@ -1,6 +1,11 @@
 package com.techblog.dao;
 
 import com.techblog.entities.User;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.Part;
+import java.io.File;
+import java.io.InputStream;
 import java.sql.*;
 
 public class UserDao {
@@ -53,5 +58,17 @@ public class UserDao {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public void updateProfile(Part file, String path) {
+      try {
+          String fileName = file.getName();
+          InputStream is = file.getInputStream();
+          byte[] data = new byte[is.available()];
+          is.read(data);
+          System.out.println(path);
+      } catch(Exception e) {
+          e.printStackTrace();
+      }
     }
 }

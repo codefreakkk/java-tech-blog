@@ -34,5 +34,15 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UpdateProfile</servlet-name>
+        <servlet-class>com.techblog.helper.UpdateProfile</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateProfile</servlet-name>
+        <url-pattern>/UpdateProfile</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
