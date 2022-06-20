@@ -2,12 +2,15 @@ package com.techblog.dao;
 
 import com.techblog.entities.User;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.sql.*;
 
+@MultipartConfig
 public class UserDao {
     private Connection con;
     public UserDao(Connection con) {
@@ -66,7 +69,10 @@ public class UserDao {
           InputStream is = file.getInputStream();
           byte[] data = new byte[is.available()];
           is.read(data);
-          System.out.println(path);
+          FileOutputStream fos = new FileOutputStream(path);
+          fos.write(data);
+          fos.close();
+          System.out.println("File Uploaded Successfully");
       } catch(Exception e) {
           e.printStackTrace();
       }

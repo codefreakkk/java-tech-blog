@@ -49,24 +49,29 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger active" href="contact.jsp">
-                                <span>Contact</span>
-                            </a>
-                        </li>
+<%--                        <li class="nav-item">--%>
+<%--                            <a class="nav-link js-scroll-trigger active" href="contact.jsp">--%>
+<%--                                <span>Contact</span>--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
 
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger active" href="categories.jsp">
-                                <span>Categories</span>
-                            </a>
-                        </li>
+<%--                        <li class="nav-item">--%>
+<%--                            <a class="nav-link js-scroll-trigger active" href="categories.jsp">--%>
+<%--                                <span>Categories</span>--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
                         <%
                             User user = (User) session.getAttribute("current_user");
                             if(user == null) {
                                 %>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger active" href="login.jsp">
-                                <span>Login / Sign Up</span>
+                                <span>Login</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger active" href="login.jsp">
+                                <span>Sign Up</span>
                             </a>
                         </li>
                         <%

@@ -44,5 +44,26 @@
         <url-pattern>/UpdateProfile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddCategoryServlet</servlet-name>
+        <servlet-class>com.techblog.servlets.AddCategoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddCategoryServlet</servlet-name>
+        <url-pattern>/AddCategoryServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>FetchCategoryServlet</servlet-name>
+        <servlet-class>com.techblog.servlets.FetchCategoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FetchCategoryServlet</servlet-name>
+        <url-pattern>/FetchCategoryServlet</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

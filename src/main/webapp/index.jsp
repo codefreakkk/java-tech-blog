@@ -1,17 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html class="no-js" lang="en-US">
-
-<!-- Mirrored from www.athenastudio.co/themes/naxos/slide.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 May 2022 11:28:30 GMT -->
 <head>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Title -->
-    <title>Naxos - App Landing Page Template</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -62,8 +58,7 @@
 
     <!-- Settings (Remove it on your site) -->
     <link rel="stylesheet" href="assets/library/settings/settings.css">
-
-    <script async src='../../cdn-cgi/bm/cv/669835187/api.js'></script></head>
+</head>
 
 <body>
 
@@ -131,91 +126,7 @@
         </div>
 
         <!-- Items -->
-        <div style=" display: grid; grid-template-columns: auto auto auto;" class="overview-item">
-
-            <!-- Item 1 -->
-            <div class="row overview-box d-flex flex-wrap">
-
-                <!-- Icon -->
-                <div class="icon icon-basic-compass"></div>
-
-                <!-- Content -->
-                <div class="content">
-                    <h6 class="font-weight-bold mb-2 mt-0">Easy to Use</h6>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur</p>
-                </div>
-
-            </div>
-
-            <!-- Item 2 -->
-            <div class="row overview-box d-flex flex-wrap">
-
-                <!-- Icon -->
-                <div class="icon icon-basic-helm"></div>
-
-                <!-- Content -->
-                <div class="content">
-                    <h6 class="font-weight-bold mb-2 mt-0">Monitor &amp; Manage</h6>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur</p>
-                </div>
-
-            </div>
-
-            <!-- Item 3 -->
-            <div class="overview-box d-flex flex-wrap">
-
-                <!-- Icon -->
-                <div class="icon icon-basic-link"></div>
-
-                <!-- Content -->
-                <div class="content">
-                    <h6 class="font-weight-bold mb-2 mt-0">Stay Connected</h6>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur</p>
-                </div>
-
-            </div>
-
-            <!-- Item 3 -->
-            <div class="overview-box d-flex flex-wrap">
-
-                <!-- Icon -->
-                <div class="icon icon-basic-link"></div>
-
-                <!-- Content -->
-                <div class="content">
-                    <h6 class="font-weight-bold mb-2 mt-0">Stay Connected</h6>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur</p>
-                </div>
-
-            </div>
-
-            <!-- Item 3 -->
-            <div class="overview-box d-flex flex-wrap">
-
-                <!-- Icon -->
-                <div class="icon icon-basic-link"></div>
-
-                <!-- Content -->
-                <div class="content">
-                    <h6 class="font-weight-bold mb-2 mt-0">Stay Connected</h6>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur</p>
-                </div>
-
-            </div>
-
-            <!-- Item 6 -->
-            <div class="overview-box d-flex flex-wrap">
-
-                <!-- Icon -->
-                <div class="icon icon-basic-link"></div>
-
-                <!-- Content -->
-                <div class="content">
-                    <h6 class="font-weight-bold mb-2 mt-0">Stay Connected</h6>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur</p>
-                </div>
-
-            </div>
+        <div style=" display: grid; grid-template-columns: auto auto auto;" class="overview-item" id="item_cont">
 
         </div>
 
@@ -231,7 +142,23 @@
     <div class="icon icon-arrows-up"></div>
 </a>
 
-<!-- jQuery -->
+
+
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "FetchCategoryServlet",
+                type: "POST",
+                success: function(data) {
+                    $("#item_cont").html(data);
+                }
+            })
+        })
+    </script>
+
+
+
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/library/jquery/jquery.js"></script>
 <script src="assets/library/jquery/jquery-easing.js"></script>
 
@@ -261,18 +188,5 @@
 <script src="assets/library/settings/jquery.cookies.min.js"></script>
 <script src="assets/library/settings/settings.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DB0Z96DK5Z"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-DB0Z96DK5Z');
-</script>
-
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'70ecf8047c4e9fdd',m:'hWCu2D2zNuLnD1J_j5F9EhGakgAdivErPPLCKUwQOHc-1653132509-0-Act4ckgp9xcO/7ErCEu3M9vRFR0poFUq9+OxBiOWNPz4AFTSiHC+CAYK3uMhsDX++DTsvOA361jGLhGxUMWVQXsq8nIlW1377cei+OL5EHy1aiCwHn4BC9fMrfdg26PD9Fu88Pmz9u9NDc6SZ97vu8s=',s:[0x59c85659fe,0xc5408c8bcf],}})();</script></body>
-
-
-<!-- Mirrored from www.athenastudio.co/themes/naxos/slide.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 May 2022 11:29:19 GMT -->
 </html>

@@ -27,15 +27,17 @@
 <%--                edit profile pic                     --%>
                 <div id="imgbody">
                     <div class="mb-3">
+                        <form action="UpdateProfile" method="POST" enctype="multipart/form-data">
                         <label for="formFile" class="form-label">Update Profile</label>
-                        <input class="form-control" type="file" id="formFile">
-                        <button type="button" id="updateprofile" onclick="updateProfile()" class="btn btn-primary mt-3">Update</button>
+                        <input class="form-control" type="file" id="formFile" name="file_">
+                        <button type="submit" id="updateprofile" class="btn btn-primary mt-3">Update</button>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" id="btn" value="edit" onclick="change()" class="btn btn-primary">Edit</button>
+<%--                <button type="button" id="btn" value="edit" onclick="change()" class="btn btn-primary">Edit</button>--%>
             </div>
         </div>
     </div>
@@ -48,20 +50,21 @@
     pbody.style.display = "block";
     imgbody.style.display = "none";
 
-    function updateProfile() {
-        const fileData = document.getElementById("formFile");
-        $.ajax({
-            url: "UpdateProfile",
-            type: "POST",
-            body: {
-                file_ : fileData
-            },
-            enctype: 'multipart/form-data',
-            data: function (data) {
-                console.log(data);
-            }
-        })
-    }
+    // function updateProfile() {
+    //     const fileData = $("#formFile")[0].files;
+    //     $.ajax({
+    //         url: "UpdateProfile",
+    //         type: "POST",
+    //         data: {
+    //             file_ : fileData
+    //         },
+    //         contentType: false,
+    //         processData: false,
+    //         success: function (data) {
+    //             console.log(data);
+    //         }
+    //     })
+    // }
 
     function change() {
         const imgbody = document.getElementById("imgbody");

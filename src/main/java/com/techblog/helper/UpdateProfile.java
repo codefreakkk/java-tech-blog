@@ -14,9 +14,10 @@ public class UpdateProfile extends HttpServlet  {
         try {
             UserDao user = new UserDao(ConnectionProvider.getCon());
             Part file = req.getPart("file_");
-            String fileName = file.getName();
+            String fileName = file.getSubmittedFileName();
             String path = req.getRealPath("/") + "uploads" + File.separator + fileName;
             user.updateProfile(file, path);
+            res.sendRedirect("home.jsp");
         } catch(Exception e) {
             e.printStackTrace();
         }

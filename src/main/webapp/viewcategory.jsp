@@ -1,15 +1,25 @@
 <%@ page import="com.techblog.entities.User" %>
+<%@ page import="com.techblog.dao.CategoryDao" %>
+<%@ page import="com.techblog.helper.ConnectionProvider" %>
+<%@ page import="com.techblog.entities.Category" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="user_navbar.jsp" %>
 <%
     int id = 0;
     User u = (User) session.getAttribute("current_user");
+    String title = "";
+    String content = "";
     if(u == null) {
 
     } else {
         id = u.getId();
     }
-
+    int cid = Integer.parseInt(request.getParameter("cid"));
+    Category cat = new Category();
+    CategoryDao obj = new CategoryDao(ConnectionProvider.getCon());
+    cat = obj.fetchTitleAndContent(cat, cid);
+    title = cat.getTitle();
+    content = cat.getContent();
 %>
 <html>
 <head>
@@ -17,7 +27,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <!-- Title -->
-    <title>Home</title>
+    <title>Naxos - App Landing Page Template</title>
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -75,36 +85,16 @@
 
 
 <div class="container">
-    <div class="mb-3 mt-4">
-<%--        <input type="email" autofocus="true" class="form-control" id="" placeholder="Search here" aria-describedby="emailHelp">--%>
-    </div>
 
-    <!-- Items -->
-    <div style=" display: grid; grid-template-columns: auto auto auto;" class="overview-item" id="item_cont">
-        <!-- Items -->
-    </div>
-
-    <input type="hidden" id="uid" value="<%=id%>"/>
+        <h3 class="mt-5"><%=title%></h3>
+        <div style="width: 90%;margin-top: 20px;padding-left: 5px; ">
+            <%=content%>
+        </div>
+</div>
 
 
-    <script>
-        $(document).ready(function() {
-            const uid = $("#uid").val();
-            $.ajax({
-                url: "FetchCategoryServlet",
-                type: "POST",
-                data: {
-                    uid: uid
-                },
-                success: function(data) {
-                    $("#item_cont").html(data);
-                }
-            })
-        })
-    </script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
