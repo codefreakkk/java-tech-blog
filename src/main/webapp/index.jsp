@@ -90,11 +90,9 @@
                     </h1>
 
                     <p class="wow fadeInUp" data-wow-offset="10" data-wow-duration="1s" data-wow-delay="0.3s">
-                        Mauris ut fermentum orci.
-                        Pellentesque ultrices interdum ultrices.
-                        Aliquam erat volutpat.
-                        Mauris molestie aliquam hendrerit.
-                        Integer cursus neque eget auctor finibus, at enim euismod.
+                       Find all technology related
+                        things here. Publish your own blogs and
+                        solve your doubts here at one place
                     </p>
 
                 </div>
@@ -119,7 +117,7 @@
 
                 <div class="section-title text-center">
                     <h3>Hey Posts Here</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo justo. Nullam dictum felis eu pede mollis pretium.</p>
+                    <p>Explore all blogs here at one place</p>
                 </div>
 
             </div>
